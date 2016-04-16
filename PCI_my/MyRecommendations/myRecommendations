@@ -1,0 +1,166 @@
+#coding=utf-8
+#Filename :myRecommendations
+# set of movies
+
+critics={'Lisa Rose': {'Lady in the Water': 2.5, 'Snakes on a Plane': 3.5,
+ 'Just My Luck': 3.0, 'Superman Returns': 3.5, 'You, Me and Dupree': 2.5,
+ 'The Night Listener': 3.0},
+'Gene Seymour': {'Lady in the Water': 3.0, 'Snakes on a Plane': 3.5,
+ 'Just My Luck': 1.5, 'Superman Returns': 5.0, 'The Night Listener': 3.0,
+ 'You, Me and Dupree': 3.5},
+'Michael Phillips': {'Lady in the Water': 2.5, 'Snakes on a Plane': 3.0,
+ 'Superman Returns': 3.5, 'The Night Listener': 4.0},
+'Claudia Puig': {'Snakes on a Plane': 3.5, 'Just My Luck': 3.0,
+ 'The Night Listener': 4.5, 'Superman Returns': 4.0,
+ 'You, Me and Dupree': 2.5},
+'Mick LaSalle': {'Lady in the Water': 3.0, 'Snakes on a Plane': 4.0,
+ 'Just My Luck': 2.0, 'Superman Returns': 3.0, 'The Night Listener': 3.0,
+ 'You, Me and Dupree': 2.0},
+'Jack Matthews': {'Lady in the Water': 3.0, 'Snakes on a Plane': 4.0,
+ 'The Night Listener': 3.0, 'Superman Returns': 5.0, 'You, Me and Dupree': 3.5},
+'Toby': {'Snakes on a Plane':4.5,'You, Me and Dupree':1.0,'Superman Returns':4.0}}
+from math import sqrt
+
+def sim_distance(prefs,person1,person2):
+    si = {}
+    for item in prefs[person1]:
+        if item in prefs[person2]:
+            si[item] = 1
+
+    if len(si) == 0:
+        return 0
+
+    sum_of_squares = sum([pow(prefs[person1][item] - prefs[person2][item],2)
+                          for item in prefs[person1] if item in prefs[person2]])
+
+    return 1/(1 + sqrt(sum_of_squares))
+
+
+
+def sim_pearson(perfs,p1,p2):
+    si = {}
+    for item in perfs[p1]:
+        if item in perfs[p2]:
+            si[item] = 1
+
+    n = len(si)
+
+    if n == 0:
+        return 0
+
+    sum1 = sum([perfs[p1][item] for item in si])
+    sum2 = sum([perfs[p2][item] for item in si])
+    sum1Sq = sum([pow(perfs[p1][item],2) for item in si])
+    sum2Sq = sum([pow(perfs[p2][item],2) for item in si])
+    pSum = sum([perfs[p1][item] * perfs[p2][item] for item in si])
+    Cov_1_2 = pSum/n - (sum1/n)*(sum2/n)
+    pVar = sqrt((sum1Sq/n - pow(sum1/n,2))*(sum2Sq/n - pow(sum2/n,2)))
+    r = Cov_1_2/pVar
+
+    return r
+
+sim_pearson(critics,'Lisa Rose','Gene Seymour')
+
+#for person,return top n mactch [(sim_1,person_1),...,(sim_n,person_n)]
+def topMatches(perfs,person,n=5,similarity = sim_pearson):
+    scores = [(similarity(perfs,person,other),other)
+              for other in perfs if other != person]
+    scores.sort()
+    scores.reverse()
+    return scores[0:n]
+
+topMatches(critics,'Toby',n = 3)
+
+# 利用他人评价值给某人提建议
+
+def getRecommendations(perfs,person,similarity = sim_pearson):
+
+    simSums = {}
+    totals = {}
+
+    for other in perfs:
+        if other == person:
+            continue
+        sim = similarity(perfs,person,other)
+
+        if sim <= 0:
+            continue
+
+        for item in perfs[other]:
+            if item not in perfs[person] or perfs[person][item] == 0:
+
+                simSums.setdefault(item,0)
+                simSums[item] += sim
+
+                totals.setdefault(item,0)
+                totals[item] += perfs[other][item]*sim
+
+    rankings = [(total/simSums[item],item) for item,total in totals.items()]
+
+    rankings.sort()
+    rankings.reverse()
+    return rankings
+
+# print getRecommendations(critics,'Toby')
+# print getRecommendations(critics,'Toby',sim_distance)
+
+#物品和人员对调
+
+def transformPerfs(perfs):
+    result = {}
+    for person in perfs:
+        for item in perfs[person]:
+            result.setdefault(item,{})
+            result[item][person] = perfs[person][item]
+
+    return result
+
+movies = transformPerfs(critics)
+
+#print topMatches(movies,'Superman Returns')
+#print getRecommendations(movies,'Superman Returns')
+
+def calculateSimilarItems(perfs,n = 10):
+    result = {}
+
+    itemPerfs = transformPerfs(perfs)
+    c = 0
+    for item in itemPerfs:
+        c += 1
+        if c % 100 == 0:
+            print "%d / %d"%(c,len(itemPerfs))
+        result[item] = topMatches(itemPerfs,item,n = n,similarity = sim_distance)
+
+    return result
+
+# recommend item for user according to itemMactch,
+def getRecommendationItems(perfs,itemMatch,user):
+    userRatings = perfs[user]
+    totalSim = {}
+    scores = {}
+    for (item,rating) in userRatings.items():
+        for (similarity,item2) in itemMatch[item]:
+            if item2 in userRatings:
+                continue
+            scores[item2].setdefault(item2,0)
+            scores[item2] += rating * similarity
+
+            totalSim[item2].setdefalut(item2,0)
+            totalSim[item2] += similarity
+
+    ranking = [(score/totalSim[item],item) for item,score in scores.items()]
+    ranking.sort()
+    ranking.reverse()
+    return ranking
+
+itemSim = calculateSimilarItems(critics)
+print getRecommendationItems(critics,itemSim,'Toby')
+
+
+
+
+# print critics['Lisa Rose']
+# print critics['Lisa Rose'].items()
+
+
+

@@ -1,0 +1,417 @@
+
+<html>
+<head>
+      <meta charset="UTF-8">
+<script type="text/javascript">
+  function playSound(){
+  var ky = document.getElementById("key");
+  var word = ky.childNodes[0].nodeValue;
+  var api = "http://dict.youdao.com/dictvoice?audio=" + encodeURIComponent(word);
+  var ado = document.getElementById("media");
+  try{
+     ado.ended = true;
+     ado.setAttribute("src",api);
+     ado.load();
+     ado.play();
+     return false;
+     }catch(err){
+     alert(err.description);
+     return false;}}
+     </script>
+
+</head>
+<body>
+<style type="text/css">
+      div.block {
+      border:1px solid #BEBEBE;
+      background:#F0F0F0;
+      margin-left:20px;
+      border-radius: 5px;
+      }
+      div.name {
+      margin-top:10px;
+      margin-bottom:5px;
+      margin-left:20px;
+      font-size:13px;
+      font-weight:bold;
+      }
+      div.item {
+      padding:5px;
+      font-size:12px;
+      margin: 0px 10px 0px 10px;
+      }
+      #web {
+      border-style: none none solid none;
+      border-color: #BEBEBE;
+      border-bottom-width: 1px;
+      }
+    </style>
+    <div class="content">
+      <div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">lesson </span>['les(ə)n]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">can </span>[kæn]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">I </span>[aɪ]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">help </span>[help]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">you </span>[juː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">madam </span>['mædəm]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">a </span>[ə; eɪ]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">woman </span>['wʊmən]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">in </span>[ɪn]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">blue </span>[bluː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">jeans </span>[dʒi:nz]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">stood </span>[stʊd]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">at </span>[æt; ət]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">the </span>[before a consonant ðə; before a vowel; ðɪ; stressed; ðiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">window </span>['wɪndəʊ]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">of </span>[ɒv; (ə)v]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">an </span>[æn; ən]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">expensive </span>[ɪk'spensɪv; ek-]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">shop </span>[ʃɒp]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">though </span>[ðəʊ]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">she </span>[ʃiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">hesitated </span></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">for </span>[fɔː; fə]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">a </span>[ə; eɪ]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">moment </span>['məʊm(ə)nt]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">she </span>[ʃiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">finally </span>['faɪnəlɪ]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">went </span>[went]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">in </span>[ɪn]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">and </span>[ənd; (ə)n; ænd]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">asked </span>[æskt]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">to </span>[tə; before a vowel; tʊ; stressed; tuː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">see </span>[siː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">a </span>[ə; eɪ]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">dress </span>[dres]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">that </span>[ðæt; ðət]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">was </span>[wɒz]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">in </span>[ɪn]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">the </span>[before a consonant ðə; before a vowel; ðɪ; stressed; ðiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">window </span>['wɪndəʊ]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">the </span>[before a consonant ðə; before a vowel; ðɪ; stressed; ðiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">assistant </span>[ə'sɪst(ə)nt]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">who </span>[huː; hʊ]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">served </span></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">her </span>[hɜː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">did </span>[dɪd]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">not </span>[nɒt]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">like </span>[laɪk]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">the </span>[before a consonant ðə; before a vowel; ðɪ; stressed; ðiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">way </span>[weɪ]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">she </span>[ʃiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">was </span>[wɒz]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">dressed </span>['dresɪd]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">glancing </span>['ɡlænsɪŋ]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">at </span>[æt; ət]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">her </span>[hɜː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">scornfully </span>['skɔ:nfəli]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">he </span>[hiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">told </span>[təʊld]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">her </span>[hɜː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">that </span>[ðæt; ðət]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">the </span>[before a consonant ðə; before a vowel; ðɪ; stressed; ðiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">dress </span>[dres]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">was </span>[wɒz]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">sold </span>[səʊld]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">the </span>[before a consonant ðə; before a vowel; ðɪ; stressed; ðiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">woman </span>['wʊmən]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">walked </span></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">out </span>[aʊt]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">of </span>[ɒv; (ə)v]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">the </span>[before a consonant ðə; before a vowel; ðɪ; stressed; ðiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">shop </span>[ʃɒp]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">angrily </span>['æŋgrili]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">and </span>[ənd; (ə)n; ænd]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">decided </span>[dɪ'saɪdɪd]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">to </span>[tə; before a vowel; tʊ; stressed; tuː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">punish </span>['pʌnɪʃ]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">the </span>[before a consonant ðə; before a vowel; ðɪ; stressed; ðiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">assistant </span>[ə'sɪst(ə)nt]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">next </span>[nekst]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">day </span>[deɪ]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">she </span>[ʃiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">returned </span>[rɪ'tɜːnd]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">to </span>[tə; before a vowel; tʊ; stressed; tuː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">the </span>[before a consonant ðə; before a vowel; ðɪ; stressed; ðiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">shop </span>[ʃɒp]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">the </span>[before a consonant ðə; before a vowel; ðɪ; stressed; ðiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">following </span>['fɒləʊɪŋ]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">morning </span>['mɔːnɪŋ]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">dressed </span>['dresɪd]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">in </span>[ɪn]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">a </span>[ə; eɪ]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">fur </span>[fɜː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">coat </span>[kəʊt]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">with </span>[wɪð]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">a </span>[ə; eɪ]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">handbag </span>['hæn(d)bæg]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">in </span>[ɪn]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">one </span>[wʌn]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">hand </span>[hænd]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">and </span>[ənd; (ə)n; ænd]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">a </span>[ə; eɪ]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">long </span>[lɒŋ]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">umbrella </span>[ʌm'brelə]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">in </span>[ɪn]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">the </span>[before a consonant ðə; before a vowel; ðɪ; stressed; ðiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">other </span>['ʌðə]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">after </span>['ɑːftə]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">seeking </span>[si:k]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">out </span>[aʊt]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">the </span>[before a consonant ðə; before a vowel; ðɪ; stressed; ðiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">rude </span>[ruːd]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">assistant </span>[ə'sɪst(ə)nt]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">she </span>[ʃiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">asked </span>[æskt]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">for </span>[fɔː; fə]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">the </span>[before a consonant ðə; before a vowel; ðɪ; stressed; ðiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">same </span>[seɪm]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">dress </span>[dres]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">not </span>[nɒt]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">realizing </span>['rɪəlaɪzɪŋ]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">who </span>[huː; hʊ]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">she </span>[ʃiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">was </span>[wɒz]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">the </span>[before a consonant ðə; before a vowel; ðɪ; stressed; ðiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">assistant </span>[ə'sɪst(ə)nt]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">was </span>[wɒz]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">eager </span>['iːgə]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">to </span>[tə; before a vowel; tʊ; stressed; tuː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">serve </span>[sɜːv]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">her </span>[hɜː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">this </span>[ðɪs]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">time </span>[taɪm]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">with </span>[wɪð]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">great </span>[greɪt]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">difficulty </span>['dɪfɪk(ə)ltɪ]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">he </span>[hiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">climbed </span>[klaɪmd]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">into </span>['ɪntʊ; 'ɪntə]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">the </span>[before a consonant ðə; before a vowel; ðɪ; stressed; ðiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">shop </span>[ʃɒp]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">window </span>['wɪndəʊ]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">to </span>[tə; before a vowel; tʊ; stressed; tuː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">get </span>[get]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">the </span>[before a consonant ðə; before a vowel; ðɪ; stressed; ðiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">dress </span>[dres]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">as </span>[æz; əz]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">soon </span>[suːn]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">as </span>[æz; əz]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">she </span>[ʃiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">saw </span>[sɔː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">it </span>[ɪt]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">the </span>[before a consonant ðə; before a vowel; ðɪ; stressed; ðiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">woman </span>['wʊmən]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">said </span>[sed]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">she </span>[ʃiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">did </span>[dɪd]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">not </span>[nɒt]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">like </span>[laɪk]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">it </span>[ɪt]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">she </span>[ʃiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">enjoyed </span></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">herself </span>[hɜː'self]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">making </span>['meɪkɪŋ]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">the </span>[before a consonant ðə; before a vowel; ðɪ; stressed; ðiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">assistant </span>[ə'sɪst(ə)nt]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">bring </span>[brɪŋ]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">almost </span>['ɔːlməʊst]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">everything </span>['evrɪθɪŋ]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">in </span>[ɪn]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">the </span>[before a consonant ðə; before a vowel; ðɪ; stressed; ðiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">window </span>['wɪndəʊ]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">before </span>[bɪ'fɔː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">finally </span>['faɪnəlɪ]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">buying </span></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">the </span>[before a consonant ðə; before a vowel; ðɪ; stressed; ðiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">dress </span>[dres]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">she </span>[ʃiː]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item">对不起,没有结果</div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">first </span>[fɜːst]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">asked </span>[æskt]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+<div class= "block">
+<div class="item"><span id="key" style="font-weight:bold">for </span>[fɔː; fə]<button id="sound" onclick="playSound()">sound</button><audio id="media"></audio></div></div>
+
+    </div>
+</body>
+</html>

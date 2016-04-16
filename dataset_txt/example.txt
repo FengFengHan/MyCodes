@@ -1,0 +1,6 @@
+high, low, full, low, good
+low,, full, low, good
+,,      compact, low, poor
+high,, full, high, good
+low, high, full, high, excellent
+low, high, full,, good
