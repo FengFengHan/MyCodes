@@ -7,8 +7,18 @@
 
 using namespace std;
 
-typedef long long LL;
-//typedef __int64 LL;
+class Tree{
+public:
+    int val;
+    Tree* left;
+    Tree* right;
+    Tree() : val(-1),left(NULL),right(NULL) {}
+    Tree(int v){
+        val = v;
+        left = NULL;
+        right = NULL;
+    }
+};
 
 string int2string(int a)
 {
@@ -47,10 +57,23 @@ inline int MyCeil(int a, int b)
     return res;
 }
 
+void FillVector(istream& input, vector<int>& vec)
+{
+    int v;
+    while(input >> v){
+        vec.push_back(v);
+    }
+}
+
+void BuildTree(vector<int>& vec)
+{
+
+}
 int main() {
 #ifndef ONLINE_JUDGE
     freopen("/Users/HAN/Documents/in.txt","r",stdin);
 #endif
-
+    vector<int> numbers;
+    FillVector(cin,numbers);
     return 0;
 }

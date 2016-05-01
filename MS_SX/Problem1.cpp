@@ -10,20 +10,22 @@
 
 using namespace std;
 
-inline double myCal(int a, int b)
+inline int MyCeil(int a, int b)
 {
-
+    int res;
+    res = a/b + (a % b ? 1 : 0);
+    return res;
 }
 
-int getPage(int mid, vector<int>& nums, int w, int h)
+int getPage(int word_w, vector<int>& nums, int w, int h)
 {
-   int line_w = w/mid;
+   int line_w = w/word_w;
     int line_nums = 0;
     for(int i=0;i<nums.size();++i){
-        line_nums += ceil(nums[i]/(double(line_w)));
+        line_nums += MyCeil(nums[i],line_w);
     }
-    int p_numline = h/mid;
-    int res = ceil(line_nums/double(p_numline));
+    int p_numline = h/word_w;
+    int res = MyCeil(line_nums,p_numline);
     return res;
 }
 int main() {
@@ -46,41 +48,22 @@ int main() {
         int start = min_;
         int end = max_;
         int mid,num_p;
-        while(start <= end){
+        while(start < end){
             mid = (start + end)/2;
+            if(mid == start){
+                mid += 1;
+            }
             num_p = getPage(mid, nums,w,h);
             if(num_p > p){
                 end = mid - 1;
-            }else if(num_p < p){
-                start = mid + 1;
+            }else if(num_p <= p){
+                start = mid;
             }else{
                 break;
             }
         }
-        int res = mid;
-        if(num_p <= p){
-            while(true){
-                if(res == max_){
-                    break;
-                }
-                num_p = getPage(res + 1,nums,w,h);
-                if(num_p > p){
-                    break;
-                }
-                res++;
-            }
-            result = res;
-        }else {
-            while (num_p > p) {
-                if(res == min_) {
-                    break;
-                }
-                num_p = getPage(res - 1, nums, w, h);
-                res--;
-            }
-            result = res;
-        }
-        printf("%d\n",result);
+
+        printf("%d\n",start);
     }
     return 0;
 }
