@@ -48,11 +48,9 @@ inline int MyCeil(int a, int b)
 }
 
 int main() {
-//#ifndef ONLINE_JUDGE
-//    freopen("/Users/HAN/Documents/in.txt","r",stdin);
-//#endif
-    char c = 'c';
-    char b = char(c + 1);
-    cout  << b << endl;
+#ifndef ONLINE_JUDGE
+    freopen("/Users/HAN/Documents/in.txt","r",stdin);
+#endif
+
     return 0;
 }

@@ -3,12 +3,12 @@
 import pandas as pd
 import datetime
 
-file_name= './backup_20160416.csv'
-start_date = datetime.datetime(2016,4, 10, 0,0,0)
-end_date = datetime.datetime(2016, 4, 15,23,59,59)
+file_name= './backup_20160521.csv'
+start_date = datetime.datetime(2016,5, 15, 0,0,0)
+end_date = datetime.datetime(2016, 5, 20,23,59,59)
 
 def timemeter_analysis(file_name,start_date, end_date):
-
+    # modify the file format for pandas read
     f = open(file_name, 'r')
     lines = f.readlines()
     f.close()
@@ -17,7 +17,7 @@ def timemeter_analysis(file_name,start_date, end_date):
         if line[1] != '#':
             f.write(line)
     f.close()
-
+    # read file to pandas
     items = pd.read_csv("backup.csv")
     items.columns = ['Time', 'Description', 'Label', 'Start', 'End', 'Comment', 'ID']
     dateparse = lambda x: pd.datetime.strptime(x, '%Y-%m-%d %H:%M:%S')
@@ -25,7 +25,6 @@ def timemeter_analysis(file_name,start_date, end_date):
     items = items[items['Start'] > start_date]
     items = items[items['Start'] < end_date]
     items = items.sort_values(by = 'Start')
-
     groupped = items.groupby(items['Label'])
     times = groupped['Time'].agg('sum')
     def sumString(se):
@@ -34,13 +33,17 @@ def timemeter_analysis(file_name,start_date, end_date):
         for words in se:
             if not  words in uniqueWord:
                 uniqueWord.add(words)
-                result += words + "。 "
+                result += words + "。"
         return result
     contens = groupped['Description'].apply(sumString)
-
+    # from dataframe 'items' to dataframe 'result', for output
     result = pd.DataFrame(times)
+    result['Label'] = result.index
     result['Contens'] = contens
-    total_time = items['Time'].sum()
+    total_time = result['Time'].sum()
+    invalid_labels = ['4Pr', '4E', '4O', '4BR']
+    valid_time = 0
+    valid_time = total_time - (result.ix[invalid_labels,'Time']).sum()
     get_rate = lambda x: str(int((x * 100)/total_time)) + '%'
     result['Rate'] = result['Time'].map(get_rate)
     def get_time(x):
@@ -52,10 +55,12 @@ def timemeter_analysis(file_name,start_date, end_date):
         else:
             minute_s = str(minute)
         return str(hour) + ':' + minute_s
-
     result['Time'] = result['Time'].map(get_time)
-    result['Label'] = result.index
+
+    #result.sort_values(by='Rate', inplace=True)
     #result.to_csv('result.csv', columns = ['Rate', 'Time', 'Contens'])
+
+    #dataframe to excel
     writer = pd.ExcelWriter(path='result.xlsx',engine= 'openpyxl')
     result.to_excel(writer,sheet_name='sheet1',columns=['Label', 'Rate', 'Time', 'Contens'],
                     startrow = 2, index = False)
@@ -64,9 +69,9 @@ def timemeter_analysis(file_name,start_date, end_date):
     ws.merge_cells('A1:D1')
     ws['A1'] = start_date.strftime('%Y.%m.%d') + "~" + end_date.strftime('%Y.%m.%d')
     ws.merge_cells('A2:B2')
-    ws['A' + '2'] = 'Total'
+    ws['A' + '2'] = 'Total: ' + get_time(total_time)
     ws.merge_cells('C2:D2')
-    ws['C' + '2'] = get_time(total_time)
+    ws['C' + '2'] = 'Valid: ' + get_time(valid_time)
     writer.save()
 
 timemeter_analysis(file_name,start_date,end_date)

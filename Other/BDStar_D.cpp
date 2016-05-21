@@ -4,6 +4,8 @@
 #include <string>
 #include <sstream>
 #include <cstring>
+#include <algorithm>
+#include <map>
 
 using namespace std;
 
@@ -47,12 +49,25 @@ inline int MyCeil(int a, int b)
     return res;
 }
 
+
 int main() {
-//#ifndef ONLINE_JUDGE
-//    freopen("/Users/HAN/Documents/in.txt","r",stdin);
-//#endif
-    char c = 'c';
-    char b = char(c + 1);
-    cout  << b << endl;
+#ifndef ONLINE_JUDGE
+    freopen("/Users/HAN/Documents/in.txt","r",stdin);
+#endif
+    int n;
+    cin >> n;
+    string line;
+    map<string,int> word_count;
+    getline(cin,line); //remove the space of line end
+    for(int i=0;i<n;++i){
+        getline(cin,line);
+        //cout << line << endl;
+        sort(line.begin(),line.end());
+        if(word_count.count(line) == 0){
+            word_count[line] = 0;
+        }
+        cout << word_count[line] << endl;
+        word_count[line] += 1;
+    }
     return 0;
 }

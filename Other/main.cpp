@@ -40,6 +40,14 @@ void split_strtok(string str, string split_tokens, vector<string>& str_splits)
     }
 }
 
+inline int MyCeil(int a, int b)
+{
+    int res;
+    res = a/b + (a % b ? 1 : 0);
+    return res;
+}
+
+
 int main() {
 #ifndef ONLINE_JUDGE
     freopen("/Users/HAN/Documents/in.txt","r",stdin);
